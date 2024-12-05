@@ -53,6 +53,7 @@ The relevant cleaned data:
 ></iframe>
 
 Pivot Table:
+
 | calorie_bin   |    mean |   count |
 |:--------------|--------:|--------:|
 | (0, 500]      | 4.62621 |   61076 |
@@ -64,4 +65,4 @@ Pivot Table:
 ## Framing a Prediction Problem
 
 - **Prediction Problem:** Can we predict the average rating of a recipe based on its calorie content and the minutes needed to cook the recipe?
--**Type of Prediction:** Regression
+**Type of Prediction:** Regression
