@@ -39,14 +39,14 @@ The relevant cleaned data:
 |      267   |        90 |                5 |
 
 <iframe
-  src="../dist_cals_plot.html"
+  src="dist_cals_plot.html"
   width="800"
   height="600"
   frameborder="0"
 ></iframe>
 
 <iframe
-  src="../scatter_plot.html"
+  src="scatter_plot.html"
   width="800"
   height="600"
   frameborder="0"
