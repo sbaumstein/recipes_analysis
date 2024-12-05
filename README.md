@@ -66,3 +66,43 @@ Pivot Table:
 
 - **Prediction Problem:** Can we predict the average rating of a recipe based on its calorie content and the minutes needed to cook the recipe?
 **Type of Prediction:** Regression
+
+## Baseline Model
+- **Features**:  
+  - Quantitative: `calories`, `minutes`  
+- **Encoding**: StandardScaler for quantitative variables.
+
+- **Mean Squared Error**: 0.41306454697189354
+- **R-squared**: -3.280752206569204e-05
+
+## Step 5: Final Model
+
+### **Feature Engineering**
+- Created two new features to enhance the predictive power of the model:
+  - **Calories per Minute (`calories_per_minute`)**: Captures the intensity of calorie usage relative to time.
+  - **Logarithm of Calories (`log_calories`)**: Accounts for the non-linear scaling of calories, potentially reducing skewness in the data.
+  
+These features were chosen to better represent the relationships within the dataset, as both `calories_per_minute` and `log_calories` align with how calorie usage scales with time and energy density.
+
+### **Model Selection**
+- **Algorithm**: Ridge Regression  
+- **Hyperparameters**:  
+  - `alpha`: 0.1 (controls regularization strength)  
+  - Polynomial features: Degree = 2 (to capture non-linear relationships)  
+
+GridSearchCV was used to tune hyperparameters by performing an exhaustive search over a parameter grid.
+
+### **Performance Comparison**
+- **Baseline Model**:
+  - **Features Used**: `calories` and `minutes`  
+  - **MSE**: 0.41306454697189354  
+
+- **Final Model**:
+  - **Features Used**: `calories_per_minute`, `log_calories`, and their polynomial expansions (degree=2)  
+  - **MSE**: 0.4051743738813599
+  - **R-squared**: 0.00141071065875098
+
+### **Improvement**
+- The final model showed a slight improvement in Mean Squared Error (MSE), reducing from **0.413** to **0.405**.  
+- This improvement highlights the value of engineered features like `calories_per_minute` and `log_calories`, which provided a more nuanced understanding of the relationships in the data.  
+- The polynomial expansions allowed the model to account for non-linear interactions, leading to better predictions.
