@@ -75,7 +75,7 @@ Pivot Table:
 - **Mean Squared Error**: 0.41306454697189354
 - **R-squared**: -3.280752206569204e-05
 
-## Step 5: Final Model
+## inal Model
 
 ### **Feature Engineering**
 - Created two new features to enhance the predictive power of the model:
